@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.koality-assured.org/agent/context-manifest.schema.json",
+  "title": "ContextManifest",
+  "description": "Schema for 5-tier context manifests and routing maps.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "tiers",
+    "repository"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "tiers": {
+      "type": "object",
+      "required": [
+        "tier1_routing",
+        "tier2_metadata",
+        "tier3_summaries",
+        "tier4_ast_facts",
+        "tier5_raw"
+      ],
+      "properties": {
+        "tier1_routing": {
+          "type": "object"
+        },
+        "tier2_metadata": {
+          "type": "object"
+        },
+        "tier3_summaries": {
+          "type": "object"
+        },
+        "tier4_ast_facts": {
+          "type": "object"
+        },
+        "tier5_raw": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
