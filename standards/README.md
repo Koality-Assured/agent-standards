@@ -2,6 +2,15 @@
 
 Generalized reusable requirements (no org-specific naming). Each file is Markdown with `purpose` / `rank` frontmatter.
 
+## Wiki harness
+
+Operating rules for this wiki as a fed instance of a generic template.
+
+| Doc | Intent |
+| --- | --- |
+| [`context-management.md`](./context-management.md) | 5-tier context hierarchy and prompt caching |
+| [`wiki-harness-template.md`](./wiki-harness-template.md) | Generic template vs fed instance; what syncs into `ai-harness-core` |
+
 ## Foundations
 
 Identity, data, crypto, configuration, and cloud tenancy.
