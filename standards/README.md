@@ -9,7 +9,6 @@ Operating rules for this wiki as a fed instance of a generic template.
 | Doc | Intent |
 | --- | --- |
 | [`context-management.md`](./context-management.md) | 5-tier context hierarchy and prompt caching |
-| [`research-and-empirical-validation.md`](./research-and-empirical-validation.md) | Empirical grounding, authoritative source hierarchy, and proof-of-work validation |
 | [`wiki-harness-template.md`](./wiki-harness-template.md) | Generic template vs fed instance; what syncs into `ai-harness-core` |
 
 ## Foundations
