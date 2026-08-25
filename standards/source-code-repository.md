@@ -57,6 +57,19 @@ Access, admin, and protection-rule changes must be attributable; developer devic
 - Preserve attribution of commits and merges to individual identities.
 - Systems that hold clones or repo credentials must meet [`endpoint-and-workstation.md`](./endpoint-and-workstation.md) (disk encryption, idle lock, malware defense).
 
+## Agentic git and remote state operations
+
+For automated tools, agents, and subagents operating on git repositories:
+
+- **Authoritative remote baseline:** For work depending on current repository or branch state, refresh the authoritative remote baseline and confirm the refreshed staging reference before applying mutations.
+- **Cache invalidation on refresh failure:** Do not rely on cached local state after a failed remote refresh.
+- **No implicit branch mutation:** Do not implicitly checkout, fast-forward, merge, rebase, or rewrite a local branch merely to synchronize it without explicit directive.
+- **Short-lived isolated branches:** Always execute mutating work in short-lived feature branches or isolated worktrees (`scratch/worktrees/`).
+- **Conventional commits:** All commit messages and pull request titles MUST follow Conventional Commits format (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`, etc.).
+- **Protected branches:** Never push directly to or modify protected default branches (`main`/`master`).
+- **No unauthorized destructive cleanup:** Do not delete branches, prune remote refs, or perform destructive history rewrites without explicit human authority.
+- **Sandbox boundaries:** If a managed execution sandbox blocks `.git` metadata writes, retry through the approved execution path; a genuine failure after approval remains terminal.
+
 ## Related standards
 
-Credentials: [`passwords-and-credentials.md`](./passwords-and-credentials.md). IAM: [`identity-and-access.md`](./identity-and-access.md). Developer endpoints: [`endpoint-and-workstation.md`](./endpoint-and-workstation.md). GitHub as IaC control plane: [`github-iac-security.md`](./github-iac-security.md). Vendor git SaaS: [`saas-security.md`](./saas-security.md).
+Credentials: [`passwords-and-credentials.md`](./passwords-and-credentials.md). IAM: [`identity-and-access.md`](./identity-and-access.md). Developer endpoints: [`endpoint-and-workstation.md`](./endpoint-and-workstation.md). GitHub as IaC control plane: [`github-iac-security.md`](./github-iac-security.md). Vendor git SaaS: [`saas-security.md`](./saas-security.md). Conventional commits: [`../../references/conventional-commits/`](../../references/conventional-commits/).

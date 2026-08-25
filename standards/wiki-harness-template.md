@@ -55,6 +55,48 @@ Structure corrections in this wiki are the source that gets synced into `ai-harn
 
 This page states the boundary. The file map and redaction pipeline live with the repo-sync specialist.
 
+## Relationship model and data flow invariants
+
+The harness architecture enforces strict directional flows to prevent corpus pollution, link rot, and hidden sources of truth:
+
+```text
+actionable/ ────────► claim ────────► durable owning area
+
+projects/ ──────────► supporting/ (strictly one-way)
+projects/ ──────────► results/ (pointers only)
+
+scratch/ ───────────► delete or promote
+
+docs/ ──────────────► protected corpus of record (no inferred mutations)
+```
+
+- **`actionable/`**: Temporary drop zone for human requests; items are claimed, executed, promoted to durable areas, and cleared.
+- **`projects/ -> supporting/`**: One-way dependency. `supporting/` tool patterns must never link back to ephemeral `projects/`, `research/`, or `actionable/` queues.
+- **`projects/ -> results/`**: Project specs link to finished run artifacts under `results/`; results do not serve as policy sources of truth.
+- **`scratch/`**: Non-authoritative working data, generator previews, and worktrees; never durable SoT.
+- **`docs/`**: Protected corpus of record. Additions or modifications require explicit human or project promotion.
+
+## Folder-level AGENTS.md 8-point schema
+
+Every routed directory’s `AGENTS.md` defines eight canonical dimensions:
+1. **Content ownership:** Defined agent and repository role.
+2. **Placement:** Directory structure and naming conventions.
+3. **Lifecycle:** How records advance, update, and close.
+4. **Relationships:** Permitted and prohibited links/dependencies.
+5. **Source-of-truth boundaries:** Authoritative scope.
+6. **Validation:** Automated fast validators and linters.
+7. **Escalation:** Ambiguity gate and research escalation.
+8. **Local exceptions:** Folder-specific overrides.
+
+## Separation of concerns
+
+- **Routing files** determine *where* and under *which rules*.
+- **Agents** perform *bounded roles*.
+- **Skills** define *repeatable workflows*.
+- **Folder structure** defines *ownership and lifecycle*.
+- **Memory directories** define *durability checkpoints* (`user/` and `agent/`).
+- **Indexes** provide *navigation* but do not replace source-of-truth files.
+
 ## Public export
 
 Public export still redacts credentials, tokens, internal paths, and similar secrets. Redaction applies even when the payload is machinery only.
@@ -64,3 +106,4 @@ Session rules: [`../agent-session-security.md`](../agent-session-security.md).
 ## Related
 
 Phase 4 initiative spec: [`../../projects/harness-v2-evolution/README.md`](../../projects/harness-v2-evolution/README.md).
+
