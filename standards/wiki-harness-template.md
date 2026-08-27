@@ -9,7 +9,7 @@ rag_keywords:
     ai-harness-core,
     fed-instance,
     generic-template,
-    wiki-structure,
+    router-structure,
     downstream-sync,
   ]
 ---
