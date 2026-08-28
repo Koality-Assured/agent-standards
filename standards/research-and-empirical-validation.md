@@ -40,6 +40,8 @@ All agents, tools, harness components, proposals, reviews, architecture designs,
   - **Tooling and scripts**: Perform verification against mock fixtures or isolated test runs.
   - **Process and guidance**: Ground steps against official, versioned product documentation.
 - If an idea cannot be validated locally due to platform or permission constraints, the agent MUST explicitly label the idea as unverified hypothesis and outline the exact verification steps required.
+- **Root-cause problem solving (no workarounds)**: When fixing errors or defects in tools, scripts, or systems, agents MUST identify and resolve the genuine underlying root cause. Agents MUST NOT conceal, bypass, mask, or work around the problem (e.g. silencing linters without fixing violations, disabling assertions, skipping failing tests, or routing around broken tooling).
+- **Ambiguity clarification**: When requirements, prompts, or constraints are ambiguous, contradictory, or underspecified, agents MUST stop and seek clarity from the human rather than proceeding on speculative interpretations.
 
 ### 4. Novel scope escalation and subagent research protocol
 
