@@ -11,6 +11,7 @@ Operating rules for this wiki as a fed instance of a generic template.
 | [`context-management.md`](./context-management.md) | 5-tier context hierarchy and prompt caching |
 | [`research-and-empirical-validation.md`](./research-and-empirical-validation.md) | Empirical grounding, authoritative source hierarchy, and proof-of-work validation |
 | [`harness-template.md`](./harness-template.md) | Generic template vs fed instance; what syncs into `ai-harness-core` |
+| [`us-law-reference-use.md`](./us-law-reference-use.md) | How operators use the US primary-law corpus in the legal router |
 
 ## Foundations
 

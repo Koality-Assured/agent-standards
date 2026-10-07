@@ -15,7 +15,7 @@ Define security requirements, architecture patterns, cryptographic verification 
 
 ## Scope
 
-All custom Confluence applications, UI extensions, macros, webhook consumers, and API clients deployed within organizational workspaces (including `koality-assured`). Complements [`ai-development-security.md`](./ai-development-security.md), [`internet-facing-services.md`](./internet-facing-services.md), and [`cryptography-and-key-management.md`](./cryptography-and-key-management.md).
+All custom Confluence applications, UI extensions, macros, webhook consumers, and API clients deployed within organizational workspaces. Complements [`ai-development-security.md`](./ai-development-security.md), [`internet-facing-services.md`](./internet-facing-services.md), and [`cryptography-and-key-management.md`](./cryptography-and-key-management.md).
 
 ## App architecture and authorization
 
@@ -50,9 +50,9 @@ All custom Confluence applications, UI extensions, macros, webhook consumers, an
 
 ## Verification and compliance
 
-- Validate Forge App Manifest schema: `python scripts/confluence/confluence_app_manifest.py validate --file manifest.yaml --json`.
-- Verify webhook signature verification logic: `python -m unittest scripts/tests/test_confluence_webhook.py`.
-- Fast markdown structure validation: `python scripts/docs/validate_structure_fast.py --path docs/standards/confluence-app-development-and-webhooks.md`.
+Run the repository’s configured Forge validation and application tests. Atlassian’s `forge lint` command checks Forge source for common errors; it does not replace manifest, permission-scope, or runtime tests. For webhook verification, test a valid signature, altered and missing signatures, a timestamp outside the accepted window, duplicate delivery identifiers, and acknowledgement behavior. Run these cases against local fixtures or a test workspace without production credentials. If the repository has no verifier tests or the workspace cannot exercise a required case, record that capability gap.
+
+Run the Markdown and relative-link checks configured in this repository. Do not rely on a validator that exists only in a private coordinator checkout.
 
 ## Related standards
 
@@ -64,5 +64,6 @@ All custom Confluence applications, UI extensions, macros, webhook consumers, an
 ## Sources
 
 - [Atlassian Forge Documentation](https://developer.atlassian.com/platform/forge/)
+- [Forge CLI lint](https://developer.atlassian.com/platform/forge/cli-reference/lint/)
 - [Atlassian Confluence REST API v2](https://developer.atlassian.com/cloud/confluence/rest/v2/intro/)
 - [RFC 6749: The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749)

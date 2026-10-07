@@ -15,7 +15,7 @@ Define security requirements, architecture patterns, cryptographic verification 
 
 ## Scope
 
-All custom Slack apps, bots, webhook integrations, and API clients deployed within organizational workspaces (including `koality-assured`). Complements [`ai-development-security.md`](./ai-development-security.md), [`internet-facing-services.md`](./internet-facing-services.md), and [`cryptography-and-key-management.md`](./cryptography-and-key-management.md).
+All custom Slack apps, bots, webhook integrations, and API clients deployed within organizational workspaces. Complements [`ai-development-security.md`](./ai-development-security.md), [`internet-facing-services.md`](./internet-facing-services.md), and [`cryptography-and-key-management.md`](./cryptography-and-key-management.md).
 
 ## App architecture and authorization
 
@@ -53,9 +53,7 @@ All custom Slack apps, bots, webhook integrations, and API clients deployed with
 
 ## Verification and compliance
 
-- Validate App Manifest schema and lint permissions: `python scripts/slack/slack_app_manifest.py validate --file manifest.yaml`.
-- Verify HMAC-SHA256 signature verification logic: `python -m unittest scripts/tests/test_slack_ops.py`.
-- Fast markdown structure validation: `python scripts/docs/validate_structure_fast.py --path docs/standards/slack-app-development-and-webhooks.md`.
+Validate the app manifest using Slack CLI’s `slack manifest validate` command, then run the application tests configured in this repository. Webhook tests must cover a valid HMAC-SHA256 signature, altered and missing signatures, a stale timestamp outside the accepted window, replayed event identifiers, and URL-verification challenges. Reject invalid requests before acknowledging or acting on them. Use local fixtures or a test workspace; if these tests or an isolated test environment are unavailable, state that capability gap. Run this repository’s Markdown and relative-link checks.
 
 ## Related standards
 
@@ -68,4 +66,5 @@ All custom Slack apps, bots, webhook integrations, and API clients deployed with
 
 - [Slack App Manifest Specification](https://api.slack.com/reference/manifests)
 - [Slack Verifying Requests from Slack](https://api.slack.com/authentication/verifying-requests-from-slack)
+- [Slack CLI manifest validation](https://docs.slack.dev/tools/slack-cli/reference/commands/slack_manifest_validate/)
 - [RFC 6749: The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749)
