@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%" role="img" aria-label="Agent Standards Logo">
+  <defs>
+    <!-- Background Canvas Gradient: Deep Cobalt to Midnight Black -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#0E172A" />
+      <stop offset="50%" stop-color="#090E1E" />
+      <stop offset="100%" stop-color="#03060C" />
+    </radialGradient>
+
+    <!-- Core Ambient Glow: Electric Cyan & Cobalt Luminescence -->
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.32" />
+      <stop offset="45%" stop-color="#1D4ED8" stop-opacity="0.22" />
+      <stop offset="75%" stop-color="#1E1B4B" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Linear Gradients: Cobalt to Electric Cyan -->
+    <linearGradient id="cobaltCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="40%" stop-color="#38BDF8" />
+      <stop offset="80%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <linearGradient id="cyanGlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="deepCobaltGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+
+    <!-- Platinum Gradient -->
+    <linearGradient id="platinumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#F1F5F9" />
+      <stop offset="75%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <linearGradient id="darkArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Filters: Blooming Core & Glow -->
+    <filter id="coreGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="20" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <!-- Base Plate Squircle -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="2" />
+  <rect x="22" y="22" width="468" height="468" rx="102" fill="none" stroke="url(#cobaltCyanGrad)" stroke-width="1.5" stroke-opacity="0.38" />
+
+  <!-- Ambient Luminescence Field -->
+  <circle cx="256" cy="256" r="215" fill="url(#ambientGlow)" />
+
+  <!-- Precision Technical Reticle & Grid Crosshairs -->
+  <g opacity="0.22">
+    <circle cx="256" cy="256" r="230" fill="none" stroke="#38BDF8" stroke-width="1" stroke-dasharray="4 8" />
+    <circle cx="256" cy="256" r="206" fill="none" stroke="#94A3B8" stroke-width="0.75" />
+    <line x1="256" y1="36" x2="256" y2="476" stroke="#38BDF8" stroke-width="1" stroke-dasharray="3 6" />
+    <line x1="36" y1="256" x2="476" y2="256" stroke="#38BDF8" stroke-width="1" stroke-dasharray="3 6" />
+    <line x1="100" y1="100" x2="412" y2="412" stroke="#2563EB" stroke-width="0.75" stroke-dasharray="2 8" />
+    <line x1="100" y1="412" x2="412" y2="100" stroke="#2563EB" stroke-width="0.75" stroke-dasharray="2 8" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- 5-TIER CONTEXT HIERARCHY: CONCENTRIC ORBITAL RINGS        -->
+  <!-- ======================================================== -->
+  <g id="five-tier-context-hierarchy" filter="url(#dropShadow)">
+    <!-- TIER 5: Raw Full Text & Working Memory (Outer Rim r=182) -->
+    <circle cx="256" cy="256" r="182" fill="none" stroke="url(#darkArmor)" stroke-width="8" />
+    <circle cx="256" cy="256" r="182" fill="none" stroke="url(#cobaltCyanGrad)" stroke-width="2" stroke-opacity="0.85" />
+    <circle cx="256" cy="256" r="182" fill="none" stroke="#00F0FF" stroke-width="3"
+            stroke-dasharray="45 15 25 15 65 18" stroke-linecap="round" filter="url(#subtleGlow)" />
+
+    <!-- 16 Outer Calibration Ticks on Tier 5 Outer Rim -->
+    <g fill="url(#platinumGrad)" stroke="#090E1E" stroke-width="0.8" opacity="0.9">
+      <rect x="252" y="66" width="8" height="16" rx="2" />
+      <rect x="252" y="430" width="8" height="16" rx="2" />
+      <rect x="66" y="252" width="16" height="8" rx="2" />
+      <rect x="430" y="252" width="16" height="8" rx="2" />
+
+      <rect x="252" y="66" width="8" height="16" rx="2" transform="rotate(45 256 256)" />
+      <rect x="252" y="430" width="8" height="16" rx="2" transform="rotate(45 256 256)" />
+      <rect x="66" y="252" width="16" height="8" rx="2" transform="rotate(45 256 256)" />
+      <rect x="430" y="252" width="16" height="8" rx="2" transform="rotate(45 256 256)" />
+
+      <rect x="252" y="66" width="8" height="16" rx="2" transform="rotate(22.5 256 256)" />
+      <rect x="252" y="430" width="8" height="16" rx="2" transform="rotate(22.5 256 256)" />
+      <rect x="66" y="252" width="16" height="8" rx="2" transform="rotate(22.5 256 256)" />
+      <rect x="430" y="252" width="16" height="8" rx="2" transform="rotate(22.5 256 256)" />
+
+      <rect x="252" y="66" width="8" height="16" rx="2" transform="rotate(67.5 256 256)" />
+      <rect x="252" y="430" width="8" height="16" rx="2" transform="rotate(67.5 256 256)" />
+      <rect x="66" y="252" width="16" height="8" rx="2" transform="rotate(67.5 256 256)" />
+      <rect x="430" y="252" width="16" height="8" rx="2" transform="rotate(67.5 256 256)" />
+    </g>
+
+    <!-- TIER 4: Extracted AST Facts & Headroom Compression (r=152) -->
+    <circle cx="256" cy="256" r="152" fill="none" stroke="#2563EB" stroke-width="2.5"
+            stroke-dasharray="35 12 55 16" stroke-linecap="round" opacity="0.85" />
+    <circle cx="256" cy="256" r="152" fill="none" stroke="#00F0FF" stroke-width="1"
+            stroke-dasharray="8 24" opacity="0.65" />
+    <!-- AST Structural Node Anchors -->
+    <circle cx="408" cy="256" r="4" fill="#00F0FF" filter="url(#subtleGlow)" />
+    <circle cx="104" cy="256" r="4" fill="#00F0FF" filter="url(#subtleGlow)" />
+    <circle cx="256" cy="104" r="4" fill="#38BDF8" filter="url(#subtleGlow)" />
+    <circle cx="256" cy="408" r="4" fill="#38BDF8" filter="url(#subtleGlow)" />
+
+    <!-- TIER 3: Summary Cards & Area Guides (r=122) -->
+    <circle cx="256" cy="256" r="122" fill="none" stroke="url(#platinumGrad)" stroke-width="2.5" opacity="0.8" />
+    <circle cx="256" cy="256" r="122" fill="none" stroke="#38BDF8" stroke-width="1.5"
+            stroke-dasharray="6 10" opacity="0.9" />
+    <!-- Diagonal Node Anchors -->
+    <circle cx="342" cy="170" r="3.5" fill="#FFFFFF" filter="url(#subtleGlow)" />
+    <circle cx="170" cy="342" r="3.5" fill="#FFFFFF" filter="url(#subtleGlow)" />
+    <circle cx="170" cy="170" r="3.5" fill="#FFFFFF" filter="url(#subtleGlow)" />
+    <circle cx="342" cy="342" r="3.5" fill="#FFFFFF" filter="url(#subtleGlow)" />
+
+    <!-- TIER 2: Metadata Index & Project AGENTS (r=94) -->
+    <circle cx="256" cy="256" r="94" fill="none" stroke="url(#cobaltCyanGrad)" stroke-width="4"
+            stroke-dasharray="70 14 70 14" stroke-linecap="round" />
+    <circle cx="256" cy="256" r="94" fill="none" stroke="#FFFFFF" stroke-width="1"
+            stroke-dasharray="4 8" opacity="0.75" />
+
+    <!-- TIER 1: Fast Routing & Base Foundation (r=68) -->
+    <circle cx="256" cy="256" r="68" fill="none" stroke="url(#platinumGrad)" stroke-width="5" />
+    <circle cx="256" cy="256" r="68" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#subtleGlow)" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- A2A INTERACTION PROTOCOL: HANDSHAKE ARCS & PACKET BUS    -->
+  <!-- ======================================================== -->
+  <g id="a2a-protocol-handshake" filter="url(#dropShadow)">
+    <!-- Interlocking Bi-Directional Message Flow Arcs -->
+    <!-- Inbound Dispatch Track (Left -> Right Upper Arc) -->
+    <path d="M 148 256 C 148 168, 364 168, 364 256"
+          fill="none" stroke="url(#cyanGlowGrad)" stroke-width="2.5" stroke-linecap="round"
+          stroke-dasharray="8 6" opacity="0.9" filter="url(#subtleGlow)" />
+    <!-- Outbound Response Track (Right -> Left Lower Arc) -->
+    <path d="M 364 256 C 364 344, 148 344, 148 256"
+          fill="none" stroke="url(#deepCobaltGrad)" stroke-width="2.5" stroke-linecap="round"
+          stroke-dasharray="8 6" opacity="0.9" />
+
+    <!-- A2A Agent Handshake Nexus Nodes (Left Orchestrator / Right Specialist) -->
+    <!-- Left Agent Nexus Node -->
+    <g transform="translate(148, 256)">
+      <circle cx="0" cy="0" r="9" fill="#0F172A" stroke="#00F0FF" stroke-width="2" filter="url(#subtleGlow)" />
+      <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
+      <polygon points="12,-4 18,0 12,4" fill="#00F0FF" />
+    </g>
+
+    <!-- Right Agent Nexus Node -->
+    <g transform="translate(364, 256)">
+      <circle cx="0" cy="0" r="9" fill="#0F172A" stroke="#38BDF8" stroke-width="2" filter="url(#subtleGlow)" />
+      <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
+      <polygon points="-12,-4 -18,0 -12,4" fill="#38BDF8" />
+    </g>
+
+    <!-- Mid-Flight A2A Message Envelope Glyphs -->
+    <!-- Upper Message Envelope (Dispatch at x=256, y=200) -->
+    <g transform="translate(256, 192) scale(0.9)">
+      <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#0B132B" stroke="#00F0FF" stroke-width="1.5" />
+      <polyline points="-12,-7 0,2 12,-7" fill="none" stroke="#00F0FF" stroke-width="1.2" />
+      <circle cx="0" cy="2" r="2" fill="#FFFFFF" filter="url(#subtleGlow)" />
+    </g>
+
+    <!-- Lower Message Envelope (Result at x=256, y=320) -->
+    <g transform="translate(256, 320) scale(0.9)">
+      <rect x="-14" y="-9" width="28" height="18" rx="3" fill="#0B132B" stroke="#38BDF8" stroke-width="1.5" />
+      <polyline points="-12,7 0,-2 12,7" fill="none" stroke="#38BDF8" stroke-width="1.2" />
+      <circle cx="0" cy="-2" r="2" fill="#FFFFFF" filter="url(#subtleGlow)" />
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- NORMATIVE COMPASS: AUTHORITATIVE STANDARDS RETICLE        -->
+  <!-- ======================================================== -->
+  <g id="normative-standards-compass" filter="url(#dropShadow)">
+    <!-- 8-Point Faceted Normative Compass Star -->
+    <!-- Primary Cardinal Blades (N, S, E, W - Length 60px) -->
+    <!-- North Blade -->
+    <polygon points="256,256 256,160 248,248" fill="url(#platinumGrad)" />
+    <polygon points="256,256 256,160 264,248" fill="#1D4ED8" />
+
+    <!-- South Blade -->
+    <polygon points="256,256 256,352 264,264" fill="url(#platinumGrad)" />
+    <polygon points="256,256 256,352 248,264" fill="#1D4ED8" />
+
+    <!-- East Blade -->
+    <polygon points="256,256 352,256 264,248" fill="url(#platinumGrad)" />
+    <polygon points="256,256 352,256 264,264" fill="#2563EB" />
+
+    <!-- West Blade -->
+    <polygon points="256,256 160,256 248,264" fill="url(#platinumGrad)" />
+    <polygon points="256,256 160,256 248,248" fill="#2563EB" />
+
+    <!-- Secondary Ordinal Blades (NE, NW, SE, SW - Length 38px) -->
+    <!-- North-East -->
+    <polygon points="256,256 312,200 262,246" fill="#E2E8F0" />
+    <polygon points="256,256 312,200 266,250" fill="#0284C7" />
+
+    <!-- North-West -->
+    <polygon points="256,256 200,200 246,250" fill="#E2E8F0" />
+    <polygon points="256,256 200,200 250,246" fill="#0284C7" />
+
+    <!-- South-East -->
+    <polygon points="256,256 312,312 266,262" fill="#CBD5E1" />
+    <polygon points="256,256 312,312 262,266" fill="#1E3A8A" />
+
+    <!-- South-West -->
+    <polygon points="256,256 200,312 250,266" fill="#CBD5E1" />
+    <polygon points="256,256 200,312 246,262" fill="#1E3A8A" />
+
+    <!-- Central Security Shield & Standards Core -->
+    <!-- Outer Octagonal Shield -->
+    <polygon points="256,218 283,229 294,256 283,283 256,294 229,283 218,256 229,229"
+             fill="#0B132B" stroke="#00F0FF" stroke-width="2" filter="url(#subtleGlow)" />
+
+    <!-- Inner Platinum Diamond Invariant -->
+    <polygon points="256,226 280,256 256,286 232,256"
+             fill="url(#darkArmor)" stroke="url(#platinumGrad)" stroke-width="1.5" />
+
+    <!-- Core Luminescent Singularity Nucleus -->
+    <polygon points="256,236 272,256 256,276 240,256"
+             fill="#00F0FF" filter="url(#coreGlow)" />
+    <circle cx="256" cy="256" r="4.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- TELEMETRY LABELS & BRANDING ANNOTATION                   -->
+  <!-- ======================================================== -->
+  <g id="telemetry-labels">
+    <!-- North Cardinal Marker 'N' -->
+    <text x="256" y="52" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+          font-size="12" font-weight="800" fill="#00F0FF" letter-spacing="1">N</text>
+
+    <!-- Bottom Authority Mark -->
+    <text x="256" y="470" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+          font-size="10" font-weight="700" fill="#64748B" letter-spacing="3.5">NORMATIVE AGENT SPECIFICATIONS</text>
+  </g>
+</svg>
