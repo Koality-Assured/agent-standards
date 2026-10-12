@@ -193,11 +193,11 @@ When an orchestrator delegates work:
 
 ## Related Standards and References
 
-- AI Development Security: [`ai-development-security.md`](./ai-development-security.md)
-- Data Protection: [`data-protection.md`](./data-protection.md)
+- AI Development Security: [`ai-development-security.md`](ai-development-security.md)
+- Data Protection: `data-protection.md`
 - Provider documentation: Codex [Multi-Agent v2 tool schema](https://github.com/openai/codex/blob/main/codex-rs/core/src/tools/handlers/multi_agents_spec.rs) and [spawn handler](https://github.com/openai/codex/blob/main/codex-rs/core/src/tools/handlers/multi_agents_v2/spawn.rs), [Anthropic prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), [Claude Code subagents](https://code.claude.com/docs/en/sub-agents), [Claude Code settings](https://code.claude.com/docs/en/settings), [OpenAI prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching), [OpenAI Agents SDK handoffs](https://openai.github.io/openai-agents-python/handoffs/), [Gemini context caching](https://ai.google.dev/gemini-api/docs/caching), [Gemini Interactions token usage](https://ai.google.dev/gemini-api/docs/tokens), [Gemini GenerateContent token usage](https://ai.google.dev/gemini-api/docs/generate-content/tokens)
 
 AI Router may maintain additional internal harness notes as optional provenance. Access to those notes or tools is not required to apply, validate, or maintain this standard.
 
-For ai-router delegation procedures, see [`ai-tooling/a2a/interaction-protocol.md`](../../ai-tooling/a2a/interaction-protocol.md) and [`ai-tooling/skills/skill-conventions.md`](../../ai-tooling/skills/skill-conventions.md).
+For ai-router delegation procedures, see `ai-tooling/a2a/interaction-protocol.md` and `ai-tooling/skills/skill-conventions.md`.
 

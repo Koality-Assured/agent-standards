@@ -90,11 +90,11 @@ Autonomous loops must incorporate circuit breakers against runaway execution.
 
 Security may audit AI tool configurations, inspect MCP server logs, audit RAG data permissions, and scan repositories for unverified AI dependencies at any time.
 
-Hardcoded secrets in system prompts, uncontained autonomous mutating tools without human gates, unverified hallucinated packages introduced into production manifests, or bypassed branch protection constitute control failures; suspected prompt-injection compromises follow [`incident-response.md`](./incident-response.md).
+Hardcoded secrets in system prompts, uncontained autonomous mutating tools without human gates, unverified hallucinated packages introduced into production manifests, or bypassed branch protection constitute control failures; suspected prompt-injection compromises follow `incident-response.md`.
 
 ## Related standards
 
-Secrets hygiene: [`passwords-and-credentials.md`](./passwords-and-credentials.md). Source code security: [`source-code-repository.md`](./source-code-repository.md). Supply chain: [`open-source-software-security.md`](./open-source-software-security.md). Incident response: [`incident-response.md`](./incident-response.md). SaaS security: [`saas-security.md`](./saas-security.md).
+Secrets hygiene: `passwords-and-credentials.md`. Source code security: `source-code-repository.md`. Supply chain: `open-source-software-security.md`. Incident response: `incident-response.md`. SaaS security: `saas-security.md`.
 
 ## Sources
 
