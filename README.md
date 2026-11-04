@@ -92,6 +92,30 @@ Normative RFC 2119 invariants enforced across agent runtimes:
 
 ---
 
+### 5. AI Development Security ([`standards/ai-development-security.md`](standards/ai-development-security.md))
+
+Autonomous AI agent session security, prompt-injection defense, tool boundary controls, and token budget governance:
+- **Platform & Model Governance:** Mandatory zero data retention (ZDR) validation, organizational data boundary enforcement, and designated human accountability.
+- **Model Context Protocol (MCP) Sandboxing:** Strict least-functionality tool access, subprocess isolation, containerized runtimes, and local socket boundaries.
+- **Prompt Injection Defense:** Structural segregation of system directives from untrusted user inputs, external documents, and multi-turn retrieval context.
+- **Token & Budget Economics:** Session-level token budget caps, continuous loop monitors, and human escalation gates for destructive operations.
+
+---
+
+## Normative Standards Catalog
+
+The complete catalog comprises the normative specifications and security baselines for autonomous agent systems:
+
+| Standard Document | Purpose & Architectural Intent |
+| :--- | :--- |
+| [`ai-development-security.md`](standards/ai-development-security.md) | Autonomous AI agent session security, prompt-injection defense, tool boundary controls, and token budget governance. |
+| [`5-tier-context-management.md`](standards/context/5-tier-context-management.md) | 5-tier hierarchical context budgeting model, progressive disclosure, and token headroom preservation. |
+| [`a2a-protocol-v1.md`](standards/protocols/a2a-protocol-v1.md) | Structured asynchronous message envelopes, exchange budgets, untrusted boundary defense, and lifecycle state machines. |
+| [`security-musts.md`](standards/security/security-musts.md) | Normative RFC 2119 runtime security invariants: tool isolation, AST verification, and prompt-injection defenses. |
+| [`context-management.md`](standards/context-management.md) | 5-tier context loading hierarchy, prompt caching economics, and token budget conservation for AI agent sessions. |
+
+---
+
 ## Architectural Workflow & Communication Flow
 
 ### Context Loading & Progressive Disclosure Flow
@@ -152,6 +176,8 @@ agent-standards/
 │   ├── agent-standards-banner.svg   # Widescreen hero identity banner
 │   └── agent-standards-logo.svg     # 5-tier context & normative compass logo
 ├── standards/                  # Normative specifications (RFC 2119)
+│   ├── ai-development-security.md        # AI Development Security specification
+│   ├── context-management.md             # Context Management specification
 │   ├── context/
 │   │   └── 5-tier-context-management.md  # 5-Tier Context Architecture specification
 │   ├── protocols/
